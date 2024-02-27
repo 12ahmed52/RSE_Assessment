@@ -19,8 +19,15 @@ A ROS package for real-time 3D localization using a 3D LIDAR. This package perfo
 ![Screenshot from 2024-02-27 13-08-45](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/8dffd831-54ef-406f-af08-5420694e7a99)
 
 ### 3 - Autonomous Navigation with Obstacle avoidance
-Once you have a represntation of the environment and you can localize your robot within it, you can then start the autonomous navigation of the robot.</br>
-Implement/Use an autonomous navigation algorithm to drive the robot by itself to a defined goal that can be set in the RViz GUI, while avoiding any obstacle.
+To Navigate Safetly from one Point to another I have used the ros nav_stack. </br>
+### Planners Used:
+### teb_local_planner:
+The underlying method called Timed Elastic Band locally optimizes the robot's trajectory with respect to trajectory execution time, separation from obstacles and compliance with kinodynamic constraints at runtime.</br>
+### global_planner:
+A fast, interpolated global planner for navigation it uses A* or dijkstra based on the configuration.</br>
+### Navigation Output:
+![Screenshot from 2024-02-25 15-29-02](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/aa8a9d67-bd36-4897-bf3a-c731af51b0d7)
+
 
 ### 4 - External GUI Teleoperation
 To make sure a smother operation of the robot when deploying it in the field, it's better to have a user friendly remote operation capabilties.</br>
