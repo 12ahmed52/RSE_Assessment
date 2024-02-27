@@ -36,3 +36,8 @@ back end: A ROS Node that recieves data from the Front end using TCP/IP communic
 The GUI is responsible for the Teleoperation and sending goals to the nav stack.</br>
 ![Screenshot from 2024-02-27 14-51-55](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/6cef3a99-ebed-4010-a261-2e35215cc9c5)
 
+### For more advanced and user friendly GUI:
+we can use VIZANTI a web based gui that have advanced functionalities as viewing the point cloud and camera data.</br>
+![Screenshot from 2024-02-22 15-54-26](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/8044c9a6-64c3-47ee-9552-d5a758925b14)
+
+
