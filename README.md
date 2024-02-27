@@ -13,7 +13,10 @@ I have added some buildings and raised the lidar to use the 360 points for more 
 
 ### 2 - Offline Localization
 To Localize the Robot in the Map the used algorithm was hdl_localization: </br>
-A ROS package for real-time 3D localization using a 3D LIDAR. This package performs Unscented Kalman Filter-based pose estimation. It first estimates the sensor pose from IMU data implemented on the LIDAR, and then performs multi-threaded NDT scan matching between a globalmap point cloud and input point clouds to correct the estimated pose but I have disabled the IMU.
+A ROS package for real-time 3D localization using a 3D LIDAR. This package performs Unscented Kalman Filter-based pose estimation. It first estimates the sensor pose from IMU data implemented on the LIDAR, and then performs multi-threaded NDT scan matching between a globalmap point cloud and input point clouds to correct the estimated pose but I have disabled the IMU. </br>
+### The Localization output in the 3D Map:
+
+![Screenshot from 2024-02-27 13-08-45](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/8dffd831-54ef-406f-af08-5420694e7a99)
 
 ### 3 - Autonomous Navigation with Obstacle avoidance
 Once you have a represntation of the environment and you can localize your robot within it, you can then start the autonomous navigation of the robot.</br>
