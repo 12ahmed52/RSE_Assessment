@@ -31,7 +31,8 @@ int main(int argc, char **argv) {
     ros::Publisher cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("joy_vel", 1);
     ros::Publisher move_base_goal_pub = nh.advertise<move_base_msgs::MoveBaseActionGoal>("/move_base/goal", 10);
     ros::Publisher move_base_cancel_pub = nh.advertise<actionlib_msgs::GoalID>("/move_base/cancel", 10);
-
+    geometry_msgs::Twist cmd_vel_msg;
+    
     // Register SIGINT handler
     signal(SIGINT, sigintHandler);
 
@@ -50,7 +51,6 @@ int main(int argc, char **argv) {
             if (received_json["action"] == "Velocity") {
                 linear_vel = received_json["linear"];
                 angular_vel = received_json["angular"];
-                geometry_msgs::Twist cmd_vel_msg;
                 cmd_vel_msg.linear.x = linear_vel;
                 cmd_vel_msg.angular.z = angular_vel;
 
@@ -76,10 +76,10 @@ int main(int argc, char **argv) {
             }
         }
 
-
-
-        // Create Twist message
-
+        if(linear_vel != 0 || angular_vel != 0)
+        {
+            cmd_vel_pub.publish(cmd_vel_msg);
+        }
         ros::spinOnce();
     }
 
