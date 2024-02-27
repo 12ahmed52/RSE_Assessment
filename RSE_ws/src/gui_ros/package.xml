@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gui_ros</name>
+  <version>0.0.0</version>
+  <description>The GUI ROS package</description>
+
+  <!-- Maintainer information -->
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+
+  <!-- License information -->
+  <license>TODO</license>
+
+  <!-- Build system dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <!-- Run-time dependencies -->
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <!-- Export tag -->
+  <export>
+    <!-- Declare ROS nodes to be exported -->
+    <!-- Assuming your TCP node is named tcp_node and is located in the src directory -->
+    <node name="tcp_node" pkg="gui_ros" type="tcp_node" />
+  </export>
+</package>
+
