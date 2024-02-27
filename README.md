@@ -33,7 +33,7 @@ A fast, interpolated global planner for navigation it uses A* or dijkstra based 
 The Implemented GUI is based on QT it has two parts:</br>
 Front end: Part that is responsible for the user interface.</br>
 back end: A ROS Node that recieves data from the Front end using TCP/IP communication and JSON msgs. I have used TCP/IP communication so that we can connect to the robot from other devices.</br>
-The GUI is responsible for the Teleoperation and sending goals to the nav stack.</br>
+The GUI is responsible for the Teleoperation and sending goals to the nav stack, the user can send commands to the robot even if it is going to a goal as I have used twist_mux to mux the cmd_vel topic</br>
 ![Screenshot from 2024-02-27 14-51-55](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/6cef3a99-ebed-4010-a261-2e35215cc9c5)
 
 ### For more advanced and user friendly GUI:
@@ -42,7 +42,7 @@ we can use VIZANTI a web based gui that have advanced functionalities as viewing
 
 
 ### Finally how to run the whole system
-The following command will launch the navigation stack, hdl_localization, Twis_Mux, Pointcloud_to_LaserScan and the ros_gui
+The following command will launch the navigation stack, hdl_localization, Twist_Mux, Pointcloud_to_LaserScan and the ros_gui
 ```bash
 roslaunch system_launch system_launch.launch
 ```
