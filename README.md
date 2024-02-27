@@ -1,12 +1,12 @@
 # Micropolis Robotics - Robotics Software Engineer Technical Assesment
 
 ## Milestones
-To achieve the desired goal, we break it down to smaller     to be achieved in order based on its debendency for the the next step.
-
 
 ### 1 - Preform a SLAM on the provided world
-First, you need to map the robot world so it can understand it for later operations. </br>
-Utilize your knowledge of SLAM algorithms to produce a digital map of the world.
+The used Algorithm for the 3D Mapping is hdl_graph_slam: </br>
+An Open Source ROS package for real-time 6DOF SLAM using a 3D LIDAR. It is based on 3D Graph SLAM with NDT scan matching-based odometry estimation and loop detection.</br>
+I have added some buildings and raised the lidar to use the 360 points for more accurate SLAM.</br>
+
 
 ### 2 - Offline Localization
 Next, to move the robot autonomously around the map you need to localize the robot in real-time without using SLAM (offline localization).</br>
