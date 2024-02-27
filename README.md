@@ -6,6 +6,9 @@
 The used Algorithm for the 3D Mapping is hdl_graph_slam: </br>
 An Open Source ROS package for real-time 6DOF SLAM using a 3D LIDAR. It is based on 3D Graph SLAM with NDT scan matching-based odometry estimation and loop detection.</br>
 I have added some buildings and raised the lidar to use the 360 points for more accurate SLAM.</br>
+### The Output 3D Map:
+![Screenshot from 2024-02-27 12-56-58](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/5534e068-ef6b-4754-ae3e-743361833c49)
+
 
 
 ### 2 - Offline Localization
