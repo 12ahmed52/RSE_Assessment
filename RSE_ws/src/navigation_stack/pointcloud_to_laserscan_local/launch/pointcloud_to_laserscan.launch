@@ -1,0 +1,7 @@
+<launch>
+    <!-- Launch node to convert PointCloud to LaserScan -->
+    <node name="pointcloud_to_laserscan_node" pkg="pointcloud_to_laserscan_local" type="pointcloud_to_laserscan" output="screen">
+        <!-- Set parameters -->
+        <param name="sensor_height" type="double" value="0.0"/> <!-- Default sensor height -->
+    </node>
+</launch>

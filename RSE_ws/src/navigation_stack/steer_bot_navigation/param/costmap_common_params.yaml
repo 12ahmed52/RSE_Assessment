@@ -9,7 +9,7 @@ obstacle_range: 10.5
 raytrace_range: 10.5
 
 inflation_radius: 1.0
-cost_scaling_factor: 3.0
+cost_scaling_factor: 1.0
 
 publish_voxel_map: false
 transform_tolerance: 0.5

@@ -5,7 +5,7 @@
   <arg name="move_forward_only" default="false"/>
 
   <!-- move_base -->
-  <node pkg="map_server" name="map_server" type="map_server" args="/home/ahmed/Downloads/assessment/RSE_Assessment/RSE_ws/src/navigation_stack/steer_bot_navigation/maps/map_street.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(find steer_bot_navigation)/maps/map_street.yaml"/>
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <param name="base_global_planner" value="global_planner/GlobalPlanner" />
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
@@ -19,5 +19,6 @@
     <remap from="odom" to="$(arg odom_topic)"/>
     <param name="TebLocalPlannerROS/min_vel_x" value="-2.0" if="$(arg move_forward_only)" />
   </node>
+
 </launch>
 

@@ -18,7 +18,7 @@ public:
         laser_pub = nh.advertise<sensor_msgs::LaserScan>("/output_laserscan", 1);
 
         // Set the sensor height
-        nh.param<double>("sensor_height", sensor_height, 0.0); // default to 1.0 meter
+        nh.param<double>("sensor_height", sensor_height, 0.0);
     }
 
     // Callback function to process PointCloud messages

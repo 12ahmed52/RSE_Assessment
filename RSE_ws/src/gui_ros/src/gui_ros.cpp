@@ -1,6 +1,7 @@
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 #include "geometry_msgs/PoseStamped.h"
+#include "move_base_msgs/MoveBaseActionGoal.h" // Add this header
 #include "actionlib_msgs/GoalID.h"
 #include "TCPServer.h"
 #include "json.hpp"
@@ -27,8 +28,8 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh;
 
     // Create publisher for cmd_vel topic
-    ros::Publisher cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("joy_vel", 10);
-    ros::Publisher move_base_goal_pub = nh.advertise<geometry_msgs::PoseStamped>("/move_base/goal", 10);
+    ros::Publisher cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("joy_vel", 1);
+    ros::Publisher move_base_goal_pub = nh.advertise<move_base_msgs::MoveBaseActionGoal>("/move_base/goal", 10);
     ros::Publisher move_base_cancel_pub = nh.advertise<actionlib_msgs::GoalID>("/move_base/cancel", 10);
 
     // Register SIGINT handler
@@ -49,33 +50,35 @@ int main(int argc, char **argv) {
             if (received_json["action"] == "Velocity") {
                 linear_vel = received_json["linear"];
                 angular_vel = received_json["angular"];
+                geometry_msgs::Twist cmd_vel_msg;
+                cmd_vel_msg.linear.x = linear_vel;
+                cmd_vel_msg.angular.z = angular_vel;
+
+                // Publish Twist message to cmd_vel topic
+                cmd_vel_pub.publish(cmd_vel_msg);
             } else if (received_json["action"] == "Navigation") {
                 goal_x = received_json["x"];
                 goal_y = received_json["y"];
                 navigation_enabled = received_json["nav_state"];
-            }
-        }
-
-        if (navigation_enabled) {
-            geometry_msgs::PoseStamped goal;
-            goal.header.frame_id = "map"; // Assuming the goal is in the map frame
-            goal.pose.position.x = goal_x;
-            goal.pose.position.y = goal_y;
-            goal.pose.orientation.w = 1.0;
-            move_base_goal_pub.publish(goal);
+                if (navigation_enabled) {
+                // Create and publish the MoveBaseActionGoal message
+                move_base_msgs::MoveBaseActionGoal goal_msg;
+                goal_msg.goal.target_pose.header.frame_id = "map"; // Assuming the goal is in the map frame
+                goal_msg.goal.target_pose.pose.position.x = goal_x;
+                goal_msg.goal.target_pose.pose.position.y = goal_y;
+                goal_msg.goal.target_pose.pose.orientation.w = 1.0;
+                move_base_goal_pub.publish(goal_msg);
         } else {
             // Cancel the goal
             actionlib_msgs::GoalID cancel_msg;
             move_base_cancel_pub.publish(cancel_msg);
         }
+            }
+        }
+
+
 
         // Create Twist message
-        geometry_msgs::Twist cmd_vel_msg;
-        cmd_vel_msg.linear.x = linear_vel;
-        cmd_vel_msg.angular.z = angular_vel;
-
-        // Publish Twist message to cmd_vel topic
-        cmd_vel_pub.publish(cmd_vel_msg);
 
         ros::spinOnce();
     }

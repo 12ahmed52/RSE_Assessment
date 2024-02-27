@@ -1,0 +1,9 @@
+<launch>
+
+    <include file="$(find hdl_localization)/launch/hdl_localization.launch"/>
+    <include file="$(find steer_bot_navigation)/launch/steer_bot_navigation.launch"/>
+    <include file="$(find pointcloud_to_laserscan_local)/launch/pointcloud_to_laserscan.launch"/>
+    <include file="$(find twist_mux)/launch/twist_mux.launch"/>
+    <include file="$(find gui_ros)/launch/gui_ros.launch"/>
+
+</launch>

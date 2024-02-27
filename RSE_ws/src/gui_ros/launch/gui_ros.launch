@@ -1,0 +1,5 @@
+<launch>
+    <!-- Launch node to convert PointCloud to LaserScan -->
+    <node name="tcp_server_node" pkg="gui_ros" type="tcp_server_node" output="screen">
+    </node>
+</launch>
