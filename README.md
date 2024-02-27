@@ -29,25 +29,10 @@ A fast, interpolated global planner for navigation it uses A* or dijkstra based 
 ![Screenshot from 2024-02-25 15-29-02](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/aa8a9d67-bd36-4897-bf3a-c731af51b0d7)
 
 
-### 4 - External GUI Teleoperation
-To make sure a smother operation of the robot when deploying it in the field, it's better to have a user friendly remote operation capabilties.</br>
-Develop a GUI that allows use to remotly control the robot from outside a ROS environment.
-Feel free to pick whatever framework or stack you like (C++ Qt, Python, Web-based GUI, etc...).
-**NOTE:** Implement only the basic functionality (Drive, Steer).
+### 4 - External GUI Teleoperation and Navigation
+The Implemented GUI is based on QT it has two parts:</br>
+Front end: Part that is responsible for the user interface.</br>
+back end: A ROS Node that recieves data from the Front end using TCP/IP communication and JSON msgs. I have used TCP/IP communication so that we can connect to the robot from other devices.</br>
+The GUI is responsible for the Teleoperation and sending goals to the nav stack.</br>
+![Screenshot from 2024-02-27 14-51-55](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/6cef3a99-ebed-4010-a261-2e35215cc9c5)
 
-### 5 - User Defined Navigation (Open)
-Develop the previous milestone and adopt it so the user of your GUI can also perform the Navigation functionality (Sendg Waypoints/Goal, Mapping, etc...).
-
-### (Optional) - Develop an Odometry Source for the robot
-The very first required components to start working on any autonomous functionality are the position, orientation, velocity feedback of the robot.</br>
-If we ignore the Odometry feedback provided by Gazebo, based on the robot description provided and the sensor set, develop a node that produce an Odometry feedback as accurate as possible.
-
-
-
-```bash
-GOOD LUCK!
-```
-￼
-Collapse
-
-has context menu
