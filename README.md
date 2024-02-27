@@ -12,8 +12,8 @@ I have added some buildings and raised the lidar to use the 360 points for more 
 
 
 ### 2 - Offline Localization
-Next, to move the robot autonomously around the map you need to localize the robot in real-time without using SLAM (offline localization).</br>
-Implement/Use a localization algorithm to localize the robot in the map, and test that your localization is working by movibg the robot manyually arround the map and validate the localization output.
+To Localize the Robot in the Map the used algorithm was hdl_localization: </br>
+A ROS package for real-time 3D localization using a 3D LIDAR. This package performs Unscented Kalman Filter-based pose estimation. It first estimates the sensor pose from IMU data implemented on the LIDAR, and then performs multi-threaded NDT scan matching between a globalmap point cloud and input point clouds to correct the estimated pose but I have disabled the IMU.
 
 ### 3 - Autonomous Navigation with Obstacle avoidance
 Once you have a represntation of the environment and you can localize your robot within it, you can then start the autonomous navigation of the robot.</br>
