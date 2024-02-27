@@ -1,46 +1,5 @@
 # Micropolis Robotics - Robotics Software Engineer Technical Assesment
 
-This is task defined project to asses the new hirings for Robotics Software Engineer
-It helps the company to evaluate the applicants knowledge and skills in the tools and frameworks used in the department.
-
-## Areas Covered By This Test
-- Implementation and coding skills
-- C++ and Python profcincy
-- Robot Operation Systems (ROS)
-- Robotics Fundementals
-- Autonomous Navigation Fundementals
-- GUI development
-- Software Integration
-
-## Guide and Tips
-- Fork the repo to your account, and reply to the email with your repo fork that contains the soloutions once you finish **(Any reply after two weeks of the email wil not be accepted!!!)**.</br>
-- Try to utilize known/open-source tools as possible.</br>
-- Edit the README.md file in your fork, and add the steps and exxplination of your solution for each milestone.
-
-## Project Overview
-You are given a ROS1 workspace that contains a ready to use setup for a car-like robot equibbed with a depth camera and a 3D LiDAR, placed in a virtual world within Gazebo Simulator.
-The target goal for this project, is to develop a minimal user controlled autonomous navigation functionality for the robot provided.
-
-## How To Run
-- Add the models used in the world file:
-~~~bash
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:{Add your workspace path}/src/mybot_pkg/models
-~~~
-
-- Check and install the corresponding dependencies:
-
-~~~bash
-# Available in RSE_ws
-./install.sh
-~~~
-
-
-- Launch the robot inside Gazebo:
-~~~bash
-# Launch the Robot inside Gazebo World
-roslaunch mybot_pkg gazebo.launch
-~~~
-
 ## Milestones
 To achieve the desired goal, we break it down to smaller     to be achieved in order based on its debendency for the the next step.
 
