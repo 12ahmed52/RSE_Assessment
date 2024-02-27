@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pointcloud_to_laserscan_local</name>
+  <version>0.1.0</version>
+  <description>Converts a PointCloud to LaserScan messages</description>
+  
+  <!-- Maintainer information -->
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+  
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>pcl_conversions</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+
+  <!-- License -->
+  <license>BSD</license>
+</package>
+
