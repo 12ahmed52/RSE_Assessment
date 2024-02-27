@@ -41,3 +41,8 @@ we can use VIZANTI a web based gui that have advanced functionalities as viewing
 ![Screenshot from 2024-02-22 15-54-26](https://github.com/12ahmed52/RSE_Assessment/assets/52854480/8044c9a6-64c3-47ee-9552-d5a758925b14)
 
 
+### Finally how to run the whole system
+The following command will launch the navigation stack, hdl_localization, Twis_Mux, Pointcloud_to_LaserScan and the ros_gui
+```bash
+roslaunch system_launch system_launch.launch
+```
